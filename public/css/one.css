@@ -1,0 +1,448 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+
+/* NgeSet nilai awal Style dari sebuah kelas*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
+pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
+s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+figure, header, nav, section, article, aside, footer, figcaption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+h4 {
+  line-height: 30px;
+}
+
+ul {
+  margin-bottom: 0px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 25px;
+  color: whitesmoke;
+  font-weight: 300;
+  opacity: 90%;
+}
+
+/* ngeSet Global Styles*/
+html,
+body { /* buat set background halaman secara keseluruhan hitam*/
+  background-color: black;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.main-white-button a { /* buat ngeSet model logo button*/
+  display: inline-block;
+  font-size: 16px;
+  padding: 12px 18px;
+  background-color: #9475EB;
+  color: goldenrod;
+  text-align: center;
+  font-weight: 600;
+  text-transform: capitalize;
+  transition: all .3s;
+}
+
+.main-white-button a:hover { /* buat ngeSet hover logo button jika disentuh*/
+  opacity: 0.9;
+}
+
+.button-container {
+    text-align: center; /* Untuk mengatur tombol berada di tengah secara horizontal */
+}
+
+.judul{
+  background-color: #9475EB;
+  text-align: center;
+  padding: 30px 0px 15px 0px;
+  position: relative;
+  opacity: 90%;
+font-size: 50px;
+  font-weight: 800;
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color: goldenrod;
+    font-size: 16px;
+    margin: 5px; /* Jarak antara tombol */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: pink;
+    color: white;
+}
+
+
+.text-button a { /* buat ngeSet model logo button yg berupa text*/
+  font-size: 14px;
+  color: goldenrod;
+  transition: all .3s;
+}
+
+.text-button i { /* buat ngeSet efek transisinya*/
+  font-size: 12px;
+  margin-left: 5px;
+  transition: all .5s;
+}
+
+.text-button a:hover { /* hover jika disentuh*/
+  color: pink;
+}
+
+.text-button a:hover i { /* efek hover jika disentuh*/
+  margin-left: 8px;
+}
+
+
+/*  Ini Header Halaman*/
+
+.header-area { /* bikin kelas header dulu */
+  position: relative;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 100;
+  height: 80px;
+  background: black;
+}
+
+.header-area .main-nav {  /* ini bikin kelas buat menu navigasi di header */
+  min-height: 80px;
+  background: transparent;
+}
+
+
+.header-area .main-nav .logo em { /* buat naruh logonya */
+  font-style: normal;
+  color: #9475EB;
+  font-weight: 900;
+  line-height: 80px;
+  font-size: 28px;
+  float: left;
+}
+
+.header-area .main-nav .nav { /* buat naruh tombol navigasi menu */
+  float: right;
+  margin-top: 27px;
+  margin-right: 0px;
+  background-color: transparent;
+  position: relative;
+}
+
+.header-area .main-nav .nav li { /* buat naruh jarak antar tombol */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.header-area .main-nav .nav li a { /* buat nyetting tombol navigasi menu */
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  color: #9475EB;
+  text-transform: capitalize;
+  height: 40px;
+  line-height: 40px;
+  border: transparent;
+}
+
+.header-area .main-nav .nav li:hover a, /* buat nambahin efek hover pada tombol yg lagi disentuh */
+.header-area .main-nav .nav li a.active {
+  color: goldenrod!important;
+  opacity: 1;
+}
+
+.header-area .main-nav .nav li a.active { /* buat ngatur posisi garis di tombol menu yg sedang kita berada */
+  position: relative;
+}
+
+.header-area .main-nav .nav li a.active:after { /* buat munculin garis di tombol menu yg sedang kita berada */
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-color: goldenrod;
+  content: '';
+  top: -20px;
+  left: 0;
+}
+
+/* BAGIAN KE-1 : Buat naruh banner halaman*/
+
+.main-banner { /* bikin lokasi bannernya dan jadiin background section ini*/
+  background-image: url(../images/banner_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 270px 0px 210px 0px;
+  position: relative;
+  opacity: 90%;
+}
+
+.main-banner h6 { /* buat naruh subjudul */
+  font-size: 16px;
+  color: goldenrod;
+  font-weight: 400;
+}
+
+.main-banner h2 { /* buat naruh judul halaman ini */
+  font-size: 50px;
+  font-weight: 800;
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+/* BAGIAN KE-2 : Buat naruh deskripsi acara sama lokasi acara */
+
+.amazing-venues { /* bikin kelasnya */
+  margin: 100px 0px;
+}
+
+.amazing-venues .left-content h4 { /* buat naruh judul teks yg bagian kiri */
+  font-size: 40px;
+  font-weight: 800;
+  color: #9475EB;
+  margin-bottom: 20px;
+}
+
+.amazing-venues .right-content { /* buat ngeplotting konten bagian kanan*/
+  margin-left: 30px;
+}
+
+.amazing-venues .right-content h5 i { /* buat naruh logo di bagian kanan */
+  color: red;
+  margin-right: 5px;
+}
+
+.amazing-venues .right-content h5 { /* buat naruh judul teks yg bagian kanan */
+  font-size: 22px;
+  font-weight: 800;
+  color: goldenrod;
+  margin-bottom: 25px;
+}
+
+.amazing-venues .right-content span { /* buat naruh teks yg bagian kanan */
+  font-size: 14px;
+  color: white;
+  line-height: 25px;
+  font-weight: 300;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.map-image img { /* buat naruh gambar foto map dibawahnya*/
+  width: 100%;
+  overflow: hidden;
+}
+
+
+/*-- BAGIAN 3 : Untuk naruh opsi konser--*/
+
+.coming-events { /* buat set warna bg di section ini jadi hitam*/
+  background-image: url(https://images.unsplash.com/photo-1498116069452-debf99cb30f0?auto=format&fit=crop&q=80&w=2370&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  padding: 120px 0px;
+  position: relative;
+}
+
+.coming-events .left-button { /* buat nambahin tombol discover more disebelah kiri*/
+  text-align: center;
+  position: absolute;
+  width: 9%;
+  height: auto;
+  top: 0;
+  bottom: 0;
+  background-image: url(https://images.unsplash.com/photo-1498116069452-debf99cb30f0?auto=format&fit=crop&q=80&w=2370&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+
+
+.event-item .thumb img { /* buat masukin gambar dalam kotak */
+  width: 100%;
+  overflow: hidden;
+}
+
+.event-item .down-content { /* buat bikin kotak yg isinya konten */
+  background-color: #9475EB;
+  padding: 30px;
+}
+
+.event-item .down-content h4 { /* buat ngeset warna tulisannya */
+  font-size: 22px;
+  font-weight: 700;
+  color: goldenrod;
+  margin-bottom: 25px;;
+}
+
+.event-item .down-content ul li { /* buat ngeset warna tulisannya */
+  font-size: 14px;
+  color: whitesmoke;
+  font-weight: 300;
+  margin-bottom: 15px;;
+}
+
+.event-item .down-content ul li:last-child { /* buat logo simbol waktu dll */
+  margin-bottom: 0px;
+}
+
+.event-item .down-content ul li i {
+  width: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  display: inline-block;
+}
+
+/*
+---------------------------------------------
+Subscribe
+---------------------------------------------
+*/
+
+.subscribe { /* Ini buat bikin section form validasi*/
+  background-color: #9475EB;
+  padding: 30px 0px;
+}
+
+.subscribe h4 { /* ini buat textnya */
+  font-size: 18px;
+  color: goldenrod;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.subscribe form input { /* ini buat tempat nerima inputannya */
+  padding: 5px 10px;
+  width: 100%;
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid goldenrod;
+  outline: none;
+  font-size: 14px;
+  color: white;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.subscribe form ::-webkit-input-placeholder { /* ini buat bikin tempat input */
+  color: goldenrod;
+  font-weight: 200;
+}
+
+.subscribe form .main-dark-button { /* ini buat bikin tombolnya*/
+  display: inline-block;
+  font-size: 14px;
+  padding: 12px 18px;
+  background-color: white;
+  color: goldenrod;
+  text-align: center;
+  font-weight: 500;
+  text-transform: capitalize;
+  transition: all .3s;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.subscribe form .main-dark-button:hover { /* ini buat efek hovernya*/
+  opacity: 0.7;
+}
+
+
+/*-- BAGIAN KE-4: kelas buat menu yg ada dibawah halaman --*/
+
+footer h4 { /* buat nentuin style text alamat dan cp */
+   font-size: 20px;
+   color: #9475EB;
+   font-weight: 700;
+   margin-bottom: 25px;;
+}
+
+footer .address span {
+  font-size: 14px;
+  color: white;
+  line-height: 24px;
+  font-weight: 300;
+}
+
+footer .contact {
+  text-align: right;
+}
+
+footer .contact ul li {
+  font-size: 14px;
+  color: white;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
+/*-- Ini Footer halaman --*/
+
+.sub-footer { /* garis pemisah */
+  border-top: 5px solid goldenrod;
+  margin-top: 30px;
+  padding-top: 30px;
+}
+
+.sub-footer .menu { /* buat naruh kelas list menu halaman*/
+  text-align: center;
+}
+
+.sub-footer .menu ul li { /* bikin tampilannya jadi sejajar */
+  display: inline-block;
+  margin: 10px 15px 5px 15px;
+}
+
+.sub-footer .menu ul li a { /* buat ngeSET ukuran dan warna textnya */
+  font-size: 14px;
+  font-weight: 500;
+  color: #9475EB;
+}
+
+.sub-footer .menu ul li a:hover { /* biar kalau disentuh kursor jd warna putih*/
+  color: goldenrod;
+}
+
+.sub-footer .social-links { /* buat naruh kelas logo sosmed */
+  text-align: right;
+  margin-top: 10px;
+}
+
+.sub-footer .social-links ul li { /* buat naruh logo sosmed jadi sejajar */
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.sub-footer .social-links ul li a { /* tempat naruh logo sosmed*/
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  background-color: #9475EB;
+  border-radius: 50%;
+  color: goldenrod;
+  font-size: 14px;
+  transition: all .3s;
+}
+
+.sub-footer .social-links ul li a:hover { /* biar kalau disentuh kursor jd warna putih*/
+  background-color: white;
+}

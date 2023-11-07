@@ -1,0 +1,120 @@
+body {
+    background-color: #2A3235;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    font-size: 16px;
+}
+
+selector:pseudo-class {
+    property: value;
+  }
+
+.fazle-110-profile {
+    position: fixed;
+    top: 27px;
+    right: 340px;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    color: black;
+    padding: 20px 20px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bolder;
+    font-size: 8px;
+}
+
+.fazle-110-titik3atas {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 0;
+    margin-top: -4.5px; 
+    margin-left: -7.5px;
+    letter-spacing: -2px;
+}
+
+.fazle-110-mid {
+    text-align: center;
+}
+
+.fazle-110-title {
+    font-weight: bolder;
+    font-size: 21px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.fazle-110-profpic {
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+.fazle-110-identity {
+    font-weight: bolder;
+    font-size: 12px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.fazle-110-button {
+    background-color: white;
+    border: solid transparent;
+    color: #2A3235;
+    padding: 20px 22px;
+    padding-left: 60px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-top: 6px;
+    margin-bottom: 11px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-radius: 18px;
+}
+
+.fazle-110-button:hover {
+    transition: cubic-bezier(0.37, 1.22, 0.62, 1.4) 0.2s;    
+    transform: scale(1.04);    
+    box-shadow: 1px 2px 3px rgb(28, 32, 36);
+}
+
+.fazle-110-button1 {
+    width: 48%;
+    height: 60px
+}
+
+.fazle-110-titik1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+    font-weight: bold;
+    font-size: 18px; 
+    line-height: 0; 
+    margin-top: -14px; 
+    margin-left: -5px;
+    letter-spacing: -2px; 
+    border: none;
+    border-radius: 50%;
+    padding: 12px 12px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+
+
+.fazle-110-titik2 {
+    margin-top: 6px;
+    margin-left: -48px;
+}
+
+.fazle-110-profile:hover {
+    cursor: pointer;
+}
