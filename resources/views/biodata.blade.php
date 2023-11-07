@@ -12,7 +12,6 @@
     Nama: {{ $nama}} <br>
     Alamat: {{ $alamat}} <br>
     Umur: {{$umur}}
-    hah
 </p>
 </body>
 </html>
