@@ -37,4 +37,5 @@ class DosenController extends Controller
         Alamat : ".$alamat.",
         NRP : " . $nrp . "<br>";
     }
+
 }
