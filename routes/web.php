@@ -57,10 +57,10 @@ Route::get('formulir', 'App\Http\Controllers\DosenController@formulir');
 Route::post('/formulir/proses', 'App\Http\Controllers\DosenController@proses');
 
 Route::get('/pegawai','App\Http\Controllers\PegawaiController@index');
-Route::get('/pegawai/tambah','App\Http\Controllers\PegawaiController@tambah');
+Route::get('/pegawai/pegawaitambah','App\Http\Controllers\PegawaiController@tambah');
 Route::post('/pegawai/store','App\Http\Controllers\PegawaiController@store');
-Route::get('/pegawai/edit/{id}','App\Http\Controllers\PegawaiController@edit');
-Route::get('/pegawai/view/{id}','App\Http\Controllers\PegawaiController@view');
+Route::get('/pegawai/pegawaiedit/{id}','App\Http\Controllers\PegawaiController@edit');
+Route::get('/pegawai/pegawaiview/{id}','App\Http\Controllers\PegawaiController@view');
 Route::post('/pegawai/update','App\Http\Controllers\PegawaiController@update');
 Route::get('/pegawai/hapus/{id}','App\Http\Controllers\PegawaiController@hapus');
 Route::get('/pegawai/cari','App\Http\Controllers\PegawaiController@cari');
@@ -76,6 +76,7 @@ Route::get('/mahasiswa/cari','App\Http\Controllers\MahasiswaController@cari');
 Route::get('/keranjangbelanja','App\Http\Controllers\BelanjaController@shop');
 Route::get('/keranjangbelanja/batal/{ID}','App\Http\Controllers\BelanjaController@batal');
 Route::get('/keranjangbelanja/beli','App\Http\Controllers\BelanjaController@beli');
+Route::get('/keranjangbelanja/cari','App\Http\Controllers\BelanjaController@cari');
 Route::post('/keranjangbelanja/store','App\Http\Controllers\BelanjaController@store');
 
 

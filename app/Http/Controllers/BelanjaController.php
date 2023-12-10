@@ -10,7 +10,7 @@ class BelanjaController extends Controller
 {
 	public function shop()
 	{
-    	// mengambil data dari table pegawai
+    	// mengambil data dari table keranjang belanja
 		$keranjangbelanja = DB::table('keranjangbelanja')->get();
 
         // $keranjangbelanja = DB::table('keranjangbelanja')
@@ -21,7 +21,7 @@ class BelanjaController extends Controller
 
 	}
 
-	// method untuk menampilkan view form tambah pegawai
+	// method untuk menampilkan view form tambah barang belanjaan
 	public function beli()
 	{
 
@@ -30,7 +30,7 @@ class BelanjaController extends Controller
 
 	}
 
-	// method untuk insert data ke table pegawai
+	// method untuk insert data ke table keranjang belanja
 	public function store(Request $request){
     // Validate the request, including the image file
     // $request->validate([
@@ -46,73 +46,33 @@ class BelanjaController extends Controller
         'Harga' => $request->Harga,
     ]);
 
-    // Redirect to the '/pegawai' route after successfully storing data
+    // Redirect to the '/keranjangbelanja' route after successfully storing data
     return redirect('/keranjangbelanja');
 }
 
-
-	// // method untuk edit data pegawai
-	// public function edit($id)
-	// {
-	// 	// mengambil data pegawai berdasarkan id yang dipilih
-	// 	$pegawai = DB::table('pegawai')->where('pegawai_id',$id)->get();
-	// 	// passing data pegawai yang didapat ke view edit.blade.php
-	// 	return view('edit',['pegawai' => $pegawai]);
-
-	// }
-
-	// update data pegawai
-	// public function update(Request $request)
-	// {
-	// 	// update data pegawai
-	// 	$request->validate([
-    //         'nama' => 'required|string',
-    //         'jabatan' => 'required|string',
-    //         'umur' => 'required|integer',
-    //         'alamat' => 'required|string',
-    //         'image' => 'image|mimes:jpeg,png,jpg,gif|',
-    //     ]);
-
-    //     DB::table('pegawai')->insert([
-    //         'pegawai_nama' => $request->nama,
-    //         'pegawai_jabatan' => $request->jabatan,
-    //         'pegawai_umur' => $request->umur,
-    //         'pegawai_alamat' => $request->alamat,
-    //         'pegawai_foto' => $request->file('image')->store('pegawai_foto') // Use the stored filename here
-    //     ]);
-
-    //     // Redirect to the '/pegawai' route after successfully storing data
-    //     return redirect('/pegawai');
-	// }
-
-	// method untuk hapus data pegawai
+	// method untuk hapus data belanjaan
 	public function batal($ID)
 	{
-		// menghapus data pegawai berdasarkan id yang dipilih
+		// menghapus data belanjaan berdasarkan id yang dipilih
 		DB::table('keranjangbelanja')->where('ID',$ID)->delete();
 
-		// alihkan halaman ke halaman pegawai
+		// alihkan halaman ke halaman awal keranjangbelanja
 		return redirect('/keranjangbelanja');
 	}
-    // public function cari(Request $request)
-	// {
-	// 	// menangkap data pencarian
-	// 	$cari = $request->cari;
 
-    // 		// mengambil data dari table pegawai sesuai pencarian data
-	// 	$pegawai = DB::table('pegawai')
-	// 	            ->where('pegawai_nama','like',"%".$cari."%")
-	// 	            ->paginate();
 
-    // 		// mengirim data pegawai ke view index
-	// 	return view('index',['pegawai' => $pegawai, 'cari' => $cari]);
+    public function cari(Request $request)
+	{
+		// menangkap data pencarian
+		$cari = $request->cari;
 
-	// }
-//     public function view($id){
-//     // Mengambil data pegawai dari database pegawai
-//     $pegawai = DB::table('pegawai')->where('pegawai_id', $id)->get();
+    		// mengambil data dari table keranjangbelanja sesuai pencarian data
+		$keranjangbelanja = DB::table('keranjangbelanja')
+		->where('KodeBarang' ,'like',"%".$cari."%")
+		->paginate();
 
-//     // Mengalihkan tampilan ke view dari pegawai
-//     return view('view', ['pegawai' => $pegawai]);
-// }
+    		// mengirim data sandal ke view index awal
+		return view('shop',['keranjangbelanja' => $keranjangbelanja, 'cari' => $cari]);
+
+	}
 }

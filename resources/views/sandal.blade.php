@@ -11,7 +11,7 @@
 	<br/>
     <p>Cari Data sandal :</p>
 	<form action="/sandal/cari" method="GET">
-		<input class="form-control" type="text" name="cari" placeholder="Cari sandal .."
+		<input class="form-control" type="text" name="cari" placeholder="Cari berdasarkan Kode Sandal"
         value="{{ old("cari", isset($cari) ? $cari : '') }}" >
 		<input class="btn btn-primary" type="submit" value="CARI">
 	</form>
@@ -25,7 +25,7 @@
 			<th>Ketersediaan Sandal</th>
 			<th>Opsi</th>
 		</tr>
-		@foreach($sandal as $s)
+		@forelse($sandal as $s)
 		<tr>
 			<td>{{ $s->KodeSandal }}</td>
 			<td>{{ $s->MerkSandal }}</td>
@@ -42,7 +42,11 @@
 				<a href="/sandal/hapus/{{ $s->KodeSandal }}" class="btn btn-danger">Hapus</a>
 			</td>
 		</tr>
-		@endforeach
+        @empty
+        <tr>
+            <td colspan="5">Pencarian tidak ditemukan, mohon lakukan pencarian ulang sesuai Kode Sandal yang telah terdaftar.</td>
+        </tr>
+    @endforelse
 	</table>
 @endsection
 

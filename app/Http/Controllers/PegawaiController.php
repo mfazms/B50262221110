@@ -23,7 +23,7 @@ class PegawaiController extends Controller
 	{
 
 		// memanggil view tambah
-		return view('tambah');
+		return view('pegawaitambah');
 
 	}
 
@@ -35,7 +35,7 @@ class PegawaiController extends Controller
 			'pegawai_nama' => $request->nama,
 			'pegawai_jabatan' => $request->jabatan,
 			'pegawai_umur' => $request->umur,
-			'pegawai_alamat' => $request->alamat
+			'pegawai_alamat' => $request->alamat,
 		]);
 		// alihkan halaman ke halaman pegawai
 		return redirect('/pegawai');
@@ -48,7 +48,7 @@ class PegawaiController extends Controller
 		// mengambil data pegawai berdasarkan id yang dipilih
 		$pegawai = DB::table('pegawai')->where('pegawai_id',$id)->get();
 		// passing data pegawai yang didapat ke view edit.blade.php
-		return view('edit',['pegawai' => $pegawai]);
+		return view('pegawaiedit',['pegawai' => $pegawai]);
 
 	}
 
@@ -60,7 +60,7 @@ class PegawaiController extends Controller
 			'pegawai_nama' => $request->nama,
 			'pegawai_jabatan' => $request->jabatan,
 			'pegawai_umur' => $request->umur,
-			'pegawai_alamat' => $request->alamat
+			'pegawai_alamat' => $request->alamat,
 		]);
 		// alihkan halaman ke halaman pegawai
 		return redirect('/pegawai');
@@ -98,7 +98,7 @@ class PegawaiController extends Controller
         // mengambil data pegawai berdasarkan id yang dipilih
 		$pegawai = DB::table('pegawai')->where('pegawai_id',$id)->get();
 		// passing data pegawai yang didapat ke view view.blade.php
-		return view('view',['pegawai' => $pegawai]);
+		return view('pegawaiview',['pegawai' => $pegawai]);
 
     }
 }

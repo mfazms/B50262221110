@@ -18,23 +18,37 @@
   <!-- Links -->
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" href="#">Link 1</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link 2</a>
+      <a class="nav-link" href="/">Home</a>
     </li>
 
     <!-- Dropdown -->
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Dropdown link
+        Tugas Pre-ETS
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
+        <a class="dropdown-item" href="/tugas1">Tugas 1</a>
+        <a class="dropdown-item" href="/tugas2">Tugas 2</a>
+        <a class="dropdown-item" href="/tugas2v">Tugas 2v</a>
+        <a class="dropdown-item" href="/tugas3">Tugas 3</a>
+        <a class="dropdown-item" href="/tugas4a">Tugas 4a</a>
+        <a class="dropdown-item" href="/tugas4b">Tugas 4b</a>
+        <a class="dropdown-item" href="/tugas7">Tugas 7</a>
       </div>
     </li>
+
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Tugas Pasca-ETS
+        </a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="/pegawai">Pegawai</a>
+            <a class="dropdown-item" href="/mahasiswa">Nilai Kuliah</a>
+            <a class="dropdown-item" href="/keranjangbelanja">Keranjang Belanja</a>
+            <a class="dropdown-item" href="/sandal">Sandal</a>
+        </div>
+      </li>
+
   </ul>
 </nav>
 <br>

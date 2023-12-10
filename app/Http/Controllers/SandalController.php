@@ -11,16 +11,15 @@ class SandalController extends Controller
 
     public function index()
 	{
-    	// mengambil data dari table mahasiswa
-		//$pegawai = DB::table('pegawai')->get();
+    	// mengambil data dari table sandal (sesuai nama tabel di sql)
         $sandal = DB::table('sandal')
         ->get();
-    	// mengirim data pegawai ke view index
+    	// mengirim data sandal ke view index yaitu sandal (sesuai nama index yg ada yaitu sandal.blade.php)
 		return view('sandal',['sandal' => $sandal]);
 
 	}
 
-	// method untuk menampilkan view form tambah pegawai
+	// method untuk menampilkan view form tambah jenis data sandal
 	public function tambah()
 	{
 
@@ -29,20 +28,20 @@ class SandalController extends Controller
 
 	}
 
-	// method untuk insert data ke table pegawai
+	// method untuk insert data ke table sandal
 	public function store(Request $request)
 	{
 
         if ($request->StockSandal > 0) $request->KetersediaanSandal = 1;
         else $request->KetersediaanSandal =0;
-		// insert data ke table pegawai
+		// insert data ke table sandal
 		DB::table('sandal')->insert([
             'KodeSandal' => $request->KodeSandal,
 			'MerkSandal' => $request->MerkSandal,
 			'StockSandal' => $request->StockSandal,
             'KetersediaanSandal' => $request->KetersediaanSandal
 		]);
-		// alihkan halaman ke halaman pegawai
+		// alihkan halaman ke halaman index
 		return redirect('/sandal');
 
 	}
@@ -50,9 +49,9 @@ class SandalController extends Controller
     // method untuk edit data sandal
 	public function edit($KodeSandal)
 	{
-		// mengambil data pegawai berdasarkan id yang dipilih
+		// mengambil data sandal berdasarkan id yang dipilih
 		$sandal = DB::table('sandal')->where('KodeSandal',$KodeSandal)->get();
-		// passing data pegawai yang didapat ke view edit.blade.php
+		// passing data sandal yang didapat ke view sandaledit.blade.php
 		return view('sandaledit',['sandal' => $sandal]);
 
 	}
@@ -64,7 +63,7 @@ class SandalController extends Controller
         if ($request->StockSandal > 0) $request->KetersediaanSandal = 1;
         else $request->KetersediaanSandal = 0;
 
-		// update data pegawai
+		// update data jenis sandal
 		DB::table('sandal')->where('KodeSandal',$request->KodeSandal)->update([
 			'KodeSandal' => $request->KodeSandal,
 			'MerkSandal' => $request->MerkSandal,
@@ -78,9 +77,9 @@ class SandalController extends Controller
     // method untuk lihat data sandal
     public function view($KodeSandal)
     {
-        // mengambil data pegawai berdasarkan id yang dipilih
+        // mengambil data sandal berdasarkan kodesandal (primarykeynya) yang dipilih
 		$sandal = DB::table('sandal')->where('KodeSandal',$KodeSandal)->get();
-		// passing data pegawai yang didapat ke view view.blade.php
+		// passing data sandal yang didapat ke view view.blade.php
 		return view('sandalview',['sandal' => $sandal]);
 
     }
@@ -90,10 +89,10 @@ class SandalController extends Controller
 	// method untuk hapus data sandal
 	public function hapus($KodeSandal)
 	{
-		// menghapus data pegawai berdasarkan id yang dipilih
+		// menghapus data sandal berdasarkan id yang dipilih
 		DB::table('sandal')->where('KodeSandal',$KodeSandal)->delete();
 
-		// alihkan halaman ke halaman pegawai
+		// alihkan halaman ke halaman sandal
 		return redirect('/sandal');
 	}
 
@@ -104,15 +103,15 @@ class SandalController extends Controller
 		// menangkap data pencarian
 		$cari = $request->cari;
 
-    		// mengambil data dari table pegawai sesuai pencarian data
+    		// mengambil data dari table sandal sesuai pencarian data
 		$sandal = DB::table('sandal')
-		->where('MerkSandal' ,'like',"%".$cari."%")
-        ->orWhere('KodeSandal', 'like', "%" . $cari . "%")
-        ->orWhere('StockSandal', 'like', "%" . $cari . "%")
-        ->orWhere('KetersediaanSandal', 'like', "%" . $cari . "%")
+		->where('KodeSandal' ,'like',"%".$cari."%")
+        // ->orWhere('KodeSandal', 'like', "%" . $cari . "%")
+        // ->orWhere('StockSandal', 'like', "%" . $cari . "%")
+        // ->orWhere('KetersediaanSandal', 'like', "%" . $cari . "%")
 		->paginate();
 
-    		// mengirim data pegawai ke view index
+    		// mengirim data sandal ke view index awal
 		return view('sandal',['sandal' => $sandal, 'cari' => $cari]);
 
 	}

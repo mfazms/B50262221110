@@ -1,5 +1,5 @@
 @extends('master')
-@section('judulhalaman', 'Data Pegawai')
+@section('judulhalaman', 'Keranjang Belanja')
 
 @section('konten')
 

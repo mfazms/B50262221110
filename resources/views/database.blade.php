@@ -11,7 +11,7 @@
 	<br/>
     <p>Cari Nilai Mahasiswa :</p>
 	<form action="/mahasiswa/cari" method="GET">
-		<input class="form-control" type="text" name="cari" placeholder="Cari Mahasiswa .."
+		<input class="form-control" type="text" name="cari" placeholder="Cari berdasarkan NRP Mahasiswa"
         value="{{ old("cari", isset($cari) ? $cari : '') }}" >
 		<input class="btn btn-primary" type="submit" value="CARI">
 	</form>
@@ -27,7 +27,7 @@
             <th>Bobot</th>
 			{{-- <th>Opsi</th> --}}
 		</tr>
-		@foreach($nilaikuliah as $m)
+		@forelse($nilaikuliah as $m)
 		<tr>
 			<td>{{ $m->ID }}</td>
 			<td>{{ $m->NRP }}</td>
@@ -53,7 +53,11 @@
 				<a href="/mahasiswa/hapus/{{ $m->mahasiswa_id }}" class="btn btn-danger">Hapus</a>
 			</td> --}}
 		</tr>
-		@endforeach
+        @empty
+        <tr>
+            <td colspan="5">Pencarian tidak ditemukan, mohon lakukan pencarian ulang sesuai NRP yang telah terdaftar.</td>
+        </tr>
+    @endforelse
 	</table>
 @endsection
 
