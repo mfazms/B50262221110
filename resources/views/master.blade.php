@@ -22,7 +22,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="/">CHAT</a>
+        <a class="nav-link" href="/chat">CHAT</a>
       </li>
 
     <!-- Dropdown -->
