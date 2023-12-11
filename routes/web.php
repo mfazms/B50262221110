@@ -89,3 +89,5 @@ Route::post('/sandal/update','App\Http\Controllers\SandalController@update');
 Route::get('/sandal/hapus/{id}','App\Http\Controllers\SandalController@hapus');
 Route::get('/sandal/cari','App\Http\Controllers\SandalController@cari');
 
+Route::get('/chat','App\Http\Controllers\ChatController@index');
+
